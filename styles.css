@@ -4,6 +4,7 @@ body {
     background-color: #333; /* Dark gray background */
     color: #fff; /* White text color */
     display: flex;
+    flex-direction: column; /* Stack elements vertically */
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -17,7 +18,5 @@ body {
 }
 
 #timer {
-    display: flex;
-    gap: 20px; /* Space between elements */
-    align-items: center; /* Center vertically */
+    font-size: 36px; /* Increase font size for the timer */
 }
