@@ -13,9 +13,11 @@ body {
 .countdown {
     text-align: center;
     font-size: 24px;
+    margin-top: 20px; /* Add some space between the text and timer */
 }
 
 #timer {
     display: flex;
     gap: 20px; /* Space between elements */
+    align-items: center; /* Center vertically */
 }
