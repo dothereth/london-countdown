@@ -1,26 +1,28 @@
 // script.js
 const targetDate = new Date("May 09, 2024").getTime();
-const countdownEl = document.querySelector(".countdown");
+const countdownEl = document.getElementById("timer");
 const progressBarEl = document.querySelector(".progress");
-let remainingTime = 60; // seconds (adjust as needed)
-const totalTime = remainingTime;
 
-function countdown() {
-    if (remainingTime > 0) {
-        // Update countdown timer
-        countdownEl.textContent = remainingTime;
+function updateTimer() {
+    const now = new Date().getTime();
+    const timeLeft = targetDate - now;
+
+    if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
         // Update progress bar
-        const progress = ((totalTime - remainingTime) / totalTime) * 100;
+        const totalTime = targetDate - new Date("May 09, 2023").getTime();
+        const progress = ((totalTime - timeLeft) / totalTime) * 100;
         progressBarEl.style.width = `${progress}%`;
-
-        remainingTime--;
-        setTimeout(countdown, 1000);
     } else {
-        // Countdown finished
-        progressBarEl.style.width = "100%";
         countdownEl.textContent = "Time's up!";
+        progressBarEl.style.width = "100%";
     }
 }
 
-countdown();
+setInterval(updateTimer, 1000);
