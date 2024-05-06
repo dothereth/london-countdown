@@ -1,5 +1,5 @@
 // script.js
-const targetDate = new Date("May 9, 2024").getTime();
+const targetDate = new Date("May 09, 2024").getTime();
 
 function updateTimer() {
     const now = new Date().getTime();
