@@ -5,12 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Timer</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <div class="countdown">
         <h1>Sparkling Couple Forever Reunion</h1>
         <div id="timer"></div>
+        <div class="progress"></div>
     </div>
+    <div id="fireworks"></div>
     <script src="script.js"></script>
+    <script>
+        particlesJS("fireworks", {
+            particles: {
+                number: {
+                    value: 100,
+                },
+                shape: {
+                    type: "circle",
+                },
+                size: {
+                    value: 3,
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                },
+            },
+        });
+    </script>
 </body>
 </html>
