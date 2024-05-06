@@ -1,7 +1,7 @@
 // script.js
 const targetDate = new Date("May 09, 2024").getTime();
 const countdownEl = document.getElementById("timer");
-const progressBarEl = document.querySelector(".progress");
+const progressBarEl = document.getElementById("progress");
 
 function updateTimer() {
     const now = new Date().getTime();
@@ -16,7 +16,7 @@ function updateTimer() {
         countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
         // Update progress bar
-        const totalTime = targetDate - new Date("May 09, 2023").getTime();
+        const totalTime = targetDate - new Date().getTime();
         const progress = ((totalTime - timeLeft) / totalTime) * 100;
         progressBarEl.style.width = `${progress}%`;
     } else {
